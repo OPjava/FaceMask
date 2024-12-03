@@ -9,16 +9,15 @@
 .middle-container {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
 }
+
 .create-post {
   margin-top: 10px;
   position: relative;
   display: flex;
   align-items: center;
-  left: 400px;
   border: 1px solid;
   width: 600px;
   border-radius: 10px;

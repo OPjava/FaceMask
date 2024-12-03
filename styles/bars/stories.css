@@ -1,0 +1,26 @@
+.stories-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  gap: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.stories {
+  display: flex;
+  flex-direction: column;
+}
+
+.stories-icons {
+  height: 200px;
+  width: 143px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.stories-name {
+  margin-top: -25px;
+  padding-left: 5px;
+}
