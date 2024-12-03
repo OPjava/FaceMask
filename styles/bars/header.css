@@ -9,6 +9,7 @@
   height: 50px;
   background-color: #252728;
   z-index: 1000;
+  border-bottom: 1px solid #3A3C3D;
 }
 .left-section {
   display: flex;
@@ -17,7 +18,7 @@
 .logo {
   height: 50px;
   object-fit: cover;
-  margin-left: 10px;   
+  margin-left: 0px;   
 }
 
 .search-bar {
@@ -60,7 +61,14 @@
   gap: 10px;
 }
 .right-icon {
-  height: 35px;
+  height: 36px;
   object-fit: cover;
   margin-left: 10px;  
+  border-radius: 19px;
+}
+.bar-icon {
+  height: 30px;
+  object-fit: cover;
+  margin-left: 10px;  
+  border-radius: 15px;
 }

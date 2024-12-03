@@ -1,7 +1,9 @@
 .left-bar {
   display: flex;
   flex-direction: column;
+  direction: ltr;
   position: relative;
+  flex-grow: 1;
   background-color: #1C1C1D;
   top: 50px;
   width: 350px;
@@ -10,6 +12,8 @@
   color: white;
   box-sizing: border-box;
   padding-top: 15px;
+  text-align: left;
+  
 }
 
 .ordered-bar {
@@ -19,6 +23,7 @@
   align-items: center;
   margin-bottom: 30px;
   padding-left: 10px;
+  margin-left: 10px;
 }
 
 .left-text {
