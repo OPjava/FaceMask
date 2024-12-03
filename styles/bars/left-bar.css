@@ -1,0 +1,32 @@
+.left-bar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #1C1C1D;
+  top: 50px;
+  width: 350px;
+  margin-left: -10px;
+  height: 100%;
+  color: white;
+  box-sizing: border-box;
+  padding-top: 15px;
+}
+
+.ordered-bar {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-left: 10px;
+}
+
+.left-text {
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.bar-icon {
+  height: 35px;
+  align-items: center;
+}

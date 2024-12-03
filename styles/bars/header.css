@@ -21,7 +21,7 @@
 }
 
 .search-bar {
-  height: 33px;
+  height: 36px;
   width: 200px;
   margin-top: 0px;
   border-radius: 13px;
@@ -57,6 +57,7 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
+  gap: 10px;
 }
 .right-icon {
   height: 35px;
