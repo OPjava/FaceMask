@@ -12,27 +12,27 @@
 }
 .content {
   display: flex;
-  direction: ltr;  
+  direction: ltr;
   flex: 1;
   height: auto;
   box-sizing: border-box;
   flex-shrink: 0;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
-  align-items: stretch;
+  align-items: center;
+
 }
 @media (max-width: 768px) {
-  .wrapper { 
-      width: 90%;
-      max-width: 600px;
-    }
+  .wrapper {
+    width: 90%;
+    max-width: 600px;
   }
+}
 
-
-  @media (max-width: 1024px) {
-    .wrapper { 
-        width: 75%;
-        max-width: 700px;
-      }
-    }
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 75%;
+    max-width: 700px;
+  }
+}
