@@ -14,7 +14,16 @@
   flex: 0 0 auto; /* Ensures cards remain the same width */
 
 }
-
+.swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.swiper-slide {
+  text-align: center;
+}
+.swiper-button-prev, .swiper-button-next {
+  color: #000; /* Change arrow color */
+}
 .stories-icons {
   height: 100%;
   width: 100%;
