@@ -57,10 +57,9 @@
 
     <div class="middle-bar">
       <div class="middle-container">
-        <div class="create-post">
-          <div class="post-header">
-            <img src="images/profile-icon.jpeg" class="profile-icon">
-            <input class="post-bar" type="text" placeholder="What's on your mind, John?">
+        <div class="create-post js-create-post">
+          <div class="post-header js-post-header">
+
           </div>
 
           <div class="post-images">
@@ -79,6 +78,7 @@
           </div>
         </div>
 
+          <!-- all stories will appear here -->
         <div class="stories-container js-stories-container swiper">
           <button class="arrow-back material-symbols-outlined">arrow_back_ios</button>
           <div class="swiper-wrapper">
@@ -87,10 +87,12 @@
           <button class="arrow-forward material-symbols-outlined">arrow_forward_ios</button>
         </div>
         
-
-
+        <!-- all posts will appear here -->
         <div class="content-container js-posts-container">
         </div>
+
+
+        
     </div>
   </div>
 
@@ -107,6 +109,7 @@
 
 
   </div>
+  <script src="scripts/post-create.js"></script>
   <script src="scripts/stories.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="scripts/header.js"></script>
