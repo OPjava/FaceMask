@@ -33,7 +33,7 @@ body {
   .wrapper {
     width: 100%;
   }
-  
+
   .content {
     padding: 0 0px; /* Add some padding on smaller screens */
   }
@@ -43,7 +43,7 @@ body {
   .wrapper {
     width: 100%;
   }
-  
+
   .content {
     flex-direction: column; /* Stack content vertically on mobile */
     align-items: center;
