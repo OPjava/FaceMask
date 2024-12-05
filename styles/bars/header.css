@@ -1,3 +1,4 @@
+
 .header {
   display: flex;
   flex-direction: row;
@@ -10,6 +11,7 @@
   background-color: #252728;
   z-index: 1000;
   border-bottom: 1px solid #3a3c3d;
+  padding: 0 10px;
 }
 .left-section {
   display: flex;
@@ -46,13 +48,13 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-evenly;
-
 }
 .middle-icon {
   height: 35px;
   object-fit: cover;
-  margin-left: 10px;
+  margin: 0 10px;
 }
+
 .right-section {
   display: flex;
   align-items: center;
@@ -71,4 +73,19 @@
   object-fit: cover;
   margin-left: 10px;
   border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 10px;
+  }
+
+  .middle-section {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .middle-icon {
+    margin: 0 10px;
+  }
 }

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesPerView: 'auto',
     spaceBetween: 10,
     centeredSlides: true,
-    loop: true,
+    loop: false,
     loopAdditionalSlides: 1,
     navigation: {
       nextEl: '.arrow-forward',

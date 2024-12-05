@@ -79,3 +79,13 @@ padding-left: 10px;
   flex-direction: row;
   align-items: center;
 }
+
+/* ... existing styles ... */
+
+@media (max-width: 768px) {
+  .content-head {
+    padding: 0 10px;
+  }
+
+  /* Add any other necessary adjustments for content boxes */
+}

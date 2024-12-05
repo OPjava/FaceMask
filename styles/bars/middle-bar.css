@@ -76,8 +76,21 @@
   margin-left: 5px;
   color: white;
 }
-@media (max-height: 600px) {
+/* ... existing styles ... */
+
+@media (max-width: 768px) {
   .middle-bar {
+    top: 0;
+    padding-top: 60px; /* Adjust based on your header height */
+  }
+
+  .middle-container {
     width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .content-container {
+    width: 100%;
+    max-width: 600px;
   }
 }

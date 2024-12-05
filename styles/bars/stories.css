@@ -28,70 +28,7 @@
   max-width: 140px; /* Allow Swiper to control width dynamically */
 }
 
-/* Navigation Buttons */
-.arrow-forward {
-  color: white; /* Default arrow color */
-  position: relative;
-  top: 50%;
-  margin-top: 100px;
-  transform: translateY(-50%);
-  z-index: 2;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  transition: color 0.25s ease; /* Smooth hover effect */
-}
-.arrow-back {
-  color: white; /* Default arrow color */
-  position: relative;
-  top: 50%;
-  margin-top: 100px;
-  transform: translateY(-50%);
-  z-index: 2;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  transition: color 0.25s ease; /* Smooth hover effect */
-  
-}
-.arrow-back {
-  margin-right: -40px;
-}
-.arrow-forward {
-  margin-left: -40px;
-}
 
-.stories-container button:hover {
-  color: gray; /* Change arrow color on hover */
-}
-
-/* Add these styles for the Swiper navigation buttons */
-.swiper-button-prev,
-.swiper-button-next {
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  font-size: 18px;
-}
-
-/* Hide default Swiper navigation arrows */
-.swiper-button-prev.swiper-button-hidden,
-.swiper-button-next.swiper-button-hidden {
-  opacity: 0;
-  cursor: auto;
-  pointer-events: none;
-}
 
 /* Story Card Styles */
 
