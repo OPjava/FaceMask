@@ -63,7 +63,9 @@
         <div class="middle-bar">
           <div class="middle-container">
             <div class="create-post js-create-post">
-              <div class="post-header js-post-header"></div>
+              <div class="post-header js-post-header">
+                
+              </div>
 
               <div class="post-images">
                 <div class="upload-thoughts">
@@ -101,6 +103,8 @@
     <script src="scripts/stories.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="scripts/header.js"></script>
-    <script src="scripts/actual-posts.js"></script>
-  </body>
+    <script type="module">
+      import { newPostHTML } from './scripts/actual-posts.js';
+      window.newPostHTML = newPostHTML;
+    </script>  </body>
 </html>

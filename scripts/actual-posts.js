@@ -1,4 +1,4 @@
-function newPostHTML(profileImage, profileName, postText, postImage) {
+export function newPostHTML(profileImage, profileName, postText, postImage) {
     const postHTML = `
         <div class="actual-post">
             <div class="content-head">
@@ -6,22 +6,23 @@ function newPostHTML(profileImage, profileName, postText, postImage) {
                 <span>${profileName} </span>
             </div>
             <div class="content-text">
-                <span>
-                    ${postText}
-                </span>
-                <div class="image-post-container">
-                    <img src="${postImage}" class="post-image">
-                </div>
+        <span>${postText}</span>
+        ${postImage ? `
+          <div class="image-post-container">
+            <img src="${postImage}" class="post-image">
+          </div>
+        ` : ''}
+
             </div>
             <div class="post-footer">
                 <div class="reacts">
                     <div>
                         &#128514;
-                        <span>20k</span>
+                        <span>0</span>
                     </div>
                     <div>
-                        <span>1.8k comments</span>
-                        <span>2.5k Shares</span>
+                        <span>0 comments</span>
+                        <span>0 Shares</span>
                     </div>
                 </div>
                 <div class="react-types">
@@ -46,49 +47,25 @@ function newPostHTML(profileImage, profileName, postText, postImage) {
         </div> 
     `;
     const postsContainer = document.querySelector(".js-posts-container");
-    postsContainer.innerHTML = postHTML + postsContainer.innerHTML;
+    postsContainer.insertAdjacentHTML('afterbegin', postHTML);
+
+    // Save post to local storage
+    const post = { profileImage, profileName, postText, postImage };
+    let posts = JSON.parse(localStorage.getItem('posts')) || [];
+    posts.push(post);
+    localStorage.setItem('posts', JSON.stringify(posts));
 }
 
-newPostHTML(
-    "images/profile-icon.jpeg",
-    "John Micheal",
-    "This is a new post!",
-    "images/tot-tot.jpg"
-);
+// Function to load posts from local storage
+export function loadPostsFromLocalStorage() {
+    const posts = JSON.parse(localStorage.getItem('posts')) || [];
+    posts.forEach(post => {
+        newPostHTML(post.profileImage, post.profileName, post.postText, post.postImage);
+    });
+}
 
-newPostHTML(
-    "images/profile-icon.jpeg",
-    "Peter Riad",
-    "This is a new post!",
-    "images/tot-tot.jpg"
-);
-
-newPostHTML(
-    "images/profile-icon.jpeg",
-    "Joe Suliman",
-    "This is a new post!",
-    "images/tot-tot.jpg"
-);
-newPostHTML(
-  "images/profile-icon.jpeg",
-  "John Micheal",
-  "This is a new post!",
-  "images/tot-tot.jpg"
-);
-
-newPostHTML(
-  "images/profile-icon.jpeg",
-  "Peter Riad",
-  "This is a new post!",
-  "images/tot-tot.jpg"
-);
-
-newPostHTML(
-  "images/profile-icon.jpeg",
-  "Joe Suliman",
-  "This is a new post!",
-  "images/tot-tot.jpg"
-);
+// Call this function on page load
+document.addEventListener('DOMContentLoaded', loadPostsFromLocalStorage);
 
 
 
