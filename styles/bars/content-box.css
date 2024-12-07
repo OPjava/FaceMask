@@ -19,7 +19,6 @@
   border-radius: 8px;
 }
 .content-head {
-  margin-top: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,10 +39,10 @@
 .image-post-container {
   width: 100%;
   height: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .post-image {
-  height: 95%;
+  height: 99%;
   width: 100%;
   object-fit: contain;
   aspect-ratio: auto;
@@ -56,14 +55,28 @@
 }
 
 .top-footer {
-  margin-top: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
   height: auto;
   justify-content: space-between;
+  border-bottom: 1px solid #65686C;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
-.bottom-footer {
+
+.reacts-comments-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-bottom: 1px solid #65686C;
+
+}
+
+/* .bottom-footer {
   box-sizing: border-box;
   margin-top: 5px;
   display: flex;
@@ -71,66 +84,58 @@
   align-items: center;
   height: auto;
   justify-content: space-between;
-  margin-left: 3px;
-  margin-right: 3px;
+  margin: 5px 5px;
   padding-bottom: 5px;
-}
+} */
 .emojis-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: gray;
-  margin-right: 5px;
-  visibility: hidden;
-  margin-left: 15px;
+    position: relative;
+    display: inline-block;
 }
+
+.word {
+    cursor: pointer;
+}
+
 .emojis {
-  z-index: 1;
-  display: flex;
-  flex-direction: row; /* Align emojis in a row */
-  width: fit-content; 
-  height: auto; 
-  justify-content: center; 
-  margin-bottom: 80px;
-  margin-left: 100px;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: auto;
+    justify-content: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    pointer-events: none;
 }
- .word {
-  visibility: visible;
-  position: absolute;
+
+.emojis-container:hover .emojis {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.2s;
+    pointer-events: auto;
 }
-/* Hide actual-emoji by default */
+
 .actual-emoji {
-  display: flex; /* Use flex for inner content alignment */
-  flex-direction: row; /* Align content vertically */
-  align-items: center;
-  justify-content: center;
-  width: 50px; /* Match image size */
-  height: auto; /* Adjust height automatically */
-  visibility: hidden; /* Default hidden state */
-  opacity: 0;
-  pointer-events: none; /* Prevent interaction when hidden */
-  transition: opacity 0.3s ease-in-out;
+    margin: 0 5px;
 }
+
 .emoji-size {
-  width: 50px;
-  height: 50px;
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-
+    width: 40px;
+    height: 40px;
 }
-
-/* Show actual-emoji when emojis-container is hovered */
-.emojis-container:hover .actual-emoji {
+.share-content {
   display: flex;
   flex-direction: row;
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto; /* Enable interaction when visible */
+  align-items: center;
+  cursor: pointer;
 }
 
 

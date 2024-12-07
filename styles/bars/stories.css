@@ -6,10 +6,11 @@
   margin-top: 10px;
   box-sizing: border-box;
   color: white;
-  width: 600px;
+  width: 610px;
   justify-content: center;
   align-items: center;
   top: 135px;
+  overflow: hidden;
 }
 
 
