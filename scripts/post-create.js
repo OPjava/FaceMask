@@ -1,3 +1,4 @@
+
 function createPost(profileName, profileImage) {
   // Construct the new HTML content for the post
   const newCreateHTML = `
