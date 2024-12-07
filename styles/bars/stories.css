@@ -1,17 +1,15 @@
 /* Container Styling */
 .stories-container {
-  position: relative;
-  overflow: hidden; /* Hide content that overflows the container */
+  position: absolute;
   display: flex;
   flex-direction: row;
   margin-top: 10px;
   box-sizing: border-box;
   color: white;
-  width: 610px;
+  width: 600px;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Change to visible to see if content is overflowing */
-
+  top: 135px;
 }
 
 

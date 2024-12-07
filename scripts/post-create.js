@@ -2,15 +2,34 @@
 function createPost(profileName, profileImage) {
   // Construct the new HTML content for the post
   const newCreateHTML = `
+      <div class="post-top-wrapper">
     <img src="${profileImage}" class="profile-icon">
     <input class="post-bar js-post-bar" type="text" placeholder="What's on your mind, ${profileName}?">
-    <input type="file" class="image-upload js-image-upload" accept="image/*">
-    <button class="js-post-button">Post</button>
+    <button class="post-button js-post-button">+</button>
+      </div>
+                <div class="post-images">
+                <div class="upload-thoughts1">
+                  <img src="images/another/live-video.png" alt="" />
+                  <span class="upload-thought-text">Live video</span>
+                </div>
+                <div class="upload-thoughts2">
+                  <img src="images/another/Photos.png" alt="" />
+                  <label for="photos-upload">Photos</label>
+                 <input type="file" class="image-upload js-image-upload" accept="image/*" id="photos-upload">
+                </div>
+                <div class="upload-thoughts3">
+                  <img
+                    src="images/another/feeling.png"
+                    class="upload-thoughts-images"
+                  />
+                  <span class="upload-thought-text">Feeling/Activity</span>
+                </div>
+              </div>
     
   `;
 
   // Find the .js-create-post container and update its content
-  const createPostContainer = document.querySelector('.js-post-header');
+  const createPostContainer = document.querySelector('.js-create-post');
   if (createPostContainer) {
     // Replace existing content with the new HTML
     createPostContainer.innerHTML = newCreateHTML;

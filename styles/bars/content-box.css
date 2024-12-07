@@ -5,9 +5,10 @@
   color: white;
   box-sizing: border-box;
   width: auto;
+  top: 210px;
+  
 }
 .actual-post {
-  margin-top: 10px;
   width: 600px;
   height: auto;
   display: flex;
