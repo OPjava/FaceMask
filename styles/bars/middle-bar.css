@@ -85,19 +85,20 @@
   width: 30px;
   border-radius: 50%;
   border: none;
-  background-color: #075CE5;
+  background-color: #075ce5;
   font-size: 20px;
   cursor: pointer;
   color: white;
 }
-.upload-thoughts1, .upload-thoughts2, .upload-thoughts3 {
+.upload-thoughts1,
+.upload-thoughts2,
+.upload-thoughts3 {
   display: flex;
   flex-direction: row;
   align-items: center;
 
   justify-content: space-evenly;
   max-width: 150px;
-
 }
 .upload-thoughts3 {
   margin-left: -40px;

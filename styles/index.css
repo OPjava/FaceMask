@@ -6,7 +6,6 @@
 }
 body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  
 }
 .wrapper {
   display: flex;
@@ -28,7 +27,6 @@ body {
   justify-content: space-between;
   position: relative;
   align-items: center;
-
 }
 @media (max-width: 1024px) {
   .wrapper {
@@ -52,7 +50,8 @@ body {
     align-items: center;
   }
 
-  .left-bar, .right-bar {
+  .left-bar,
+  .right-bar {
     display: none;
   }
 
@@ -60,7 +59,8 @@ body {
     width: 100%;
   }
 
-  .header .left-section, .header .right-section {
+  .header .left-section,
+  .header .right-section {
     display: none;
   }
 
@@ -69,4 +69,3 @@ body {
     justify-content: center;
   }
 }
-

@@ -7,10 +7,11 @@ function newStories(storyImage, storyName) {
       <span class="stories-name">${storyName}</span>
     </div>
   `;
-  const storyWrapper = document.querySelector('.js-stories-container .swiper-wrapper');
+  const storyWrapper = document.querySelector(
+    ".js-stories-container .swiper-wrapper"
+  );
   storyWrapper.innerHTML += storyHTML;
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
   // Add stories
@@ -22,21 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
   newStories("images/Admiral-cat.jpg", "Third Admiral");
 
   // Initialize Swiper
-  const swiper = new Swiper('.js-stories-container', {
-    slidesPerView: 'auto',
+  const swiper = new Swiper(".js-stories-container", {
+    slidesPerView: "auto",
     spaceBetween: 10,
     centeredSlides: true,
     loop: false,
     loopAdditionalSlides: 1,
     navigation: {
-      nextEl: '.arrow-forward',
-      prevEl: '.arrow-back',
+      nextEl: ".arrow-forward",
+      prevEl: ".arrow-back",
     },
     breakpoints: {
-      320: { slidesPerView: 'auto', spaceBetween: 2 },
-      480: { slidesPerView: 'auto', spaceBetween: 2 },
-      640: { slidesPerView: 'auto', spaceBetween: 2 },
-      768: { slidesPerView: 'auto', spaceBetween: 10 },
+      320: { slidesPerView: "auto", spaceBetween: 2 },
+      480: { slidesPerView: "auto", spaceBetween: 2 },
+      640: { slidesPerView: "auto", spaceBetween: 2 },
+      768: { slidesPerView: "auto", spaceBetween: 10 },
     },
   });
 
@@ -46,7 +47,5 @@ document.addEventListener("DOMContentLoaded", () => {
     swiper.update();
   }
   updateSwiper();
-  window.addEventListener('resize', updateSwiper);
+  window.addEventListener("resize", updateSwiper);
 });
-
-

@@ -13,7 +13,6 @@
   overflow: hidden;
 }
 
-
 /* Swiper Styles */
 .swiper-wrapper {
   position: relative;
@@ -21,16 +20,14 @@
   transition: transform 0.3s ease; /* Smooth slide transitions */
 }
 
-.stories, .swiper-slide {
+.stories,
+.swiper-slide {
   display: flex;
   flex-direction: column;
   max-width: 140px; /* Allow Swiper to control width dynamically */
 }
 
-
-
 /* Story Card Styles */
-
 
 .story-contain-image {
   width: 140px;

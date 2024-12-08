@@ -21,7 +21,7 @@ export function newPostHTML(profileImage, profileName, postText, postImage) {
         <div class="footer-post">
             <div class="reacts-comments-footer">
 
-              <div>00.0k</div>
+              <div class="js-likes-counter">0 Reacts</div>
 
               <div class="comments-count">0 Comments</div>
 
@@ -86,20 +86,63 @@ export function newPostHTML(profileImage, profileName, postText, postImage) {
 </div>
 
       `;
-      const postsContainer = document.querySelector(".js-posts-container");
-      postsContainer.insertAdjacentHTML("afterbegin", postHTML);
-      // Add event listener for comments
-      const commentInput = document.getElementById('comment-bar-text');
-      const saveButton = document.getElementById('saveButton');
-      const commentsList = document.querySelector('.js-comments-list');
-      const commentsCountDiv = document.querySelector('.comments-count');
-      let commentCounter = 0;
+  const postsContainer = document.querySelector(".js-posts-container");
+  postsContainer.insertAdjacentHTML("afterbegin", postHTML);
+  // Add event listener for comments
+  const commentInput = document.getElementById("comment-bar-text");
+  const saveButton = document.getElementById("saveButton");
+  const commentsList = document.querySelector(".js-comments-list");
+  const commentsCountDiv = document.querySelector(".comments-count");
+  const reactsCountDiv = document.querySelector(".js-likes-counter");
+  let commentCounter = 0;
 
-      saveButton.addEventListener('click', () => {
-        const commentValue = commentInput.value;
-        if (commentValue.trim() !== '') {
-          // Create a new comment HTML
-          const newCommentHTML = `
+  // Add event listener for likes
+  let likesCounter = 0;
+  let loveCounter = 0;
+  let angryCounter = 0;
+  let hahaCounter = 0;
+  const likeButtons = document.querySelectorAll(".actual-emoji");
+  likeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const imgSrc = button.querySelector("img").src;
+      if (imgSrc.includes("images/reacts/like.gif")) {
+        likesCounter++;
+        updateReactCounter(reactsCountDiv, likesCounter, "like");
+      } else if (imgSrc.includes("images/reacts/love.gif")) {
+        loveCounter++;
+        updateReactCounter(reactsCountDiv, loveCounter, "love");
+      } else if (imgSrc.includes("images/reacts/angry.gif")) {
+        angryCounter++;
+        updateReactCounter(reactsCountDiv, angryCounter, "angry");
+      } else if (imgSrc.includes("images/reacts/haha.gif")) {
+        hahaCounter++;
+        updateReactCounter(reactsCountDiv, hahaCounter, "haha");
+      }
+
+      // console.log("React added:", getTotalReacts());
+    });
+  });
+
+  function updateReactCounter(element, count, type) {
+    element.innerHTML = `
+    <div class="likes-counter-container"> 
+    <img class="likes-size" src="images/reacts/${type}.gif" alt="${
+      type.charAt(0).toUpperCase() + type.slice(1)
+    }">
+    <span>${count} Reacts</span>
+    </div>
+    `;
+  }
+
+  function getTotalReacts() {
+    return likesCounter + loveCounter + angryCounter + hahaCounter;
+  }
+
+  saveButton.addEventListener("click", () => {
+    const commentValue = commentInput.value;
+    if (commentValue.trim() !== "") {
+      // Create a new comment HTML
+      const newCommentHTML = `
             <div class="comment-post">
             <img src="${profileImage}" class="comment-profile-icon" alt="Profile Image">
             <div class="comment-wrap">
@@ -109,26 +152,25 @@ export function newPostHTML(profileImage, profileName, postText, postImage) {
             </div>
           `;
 
-          // Add the new comment to the comments list
-          commentsList.insertAdjacentHTML('afterbegin', newCommentHTML);
+      // Add the new comment to the comments list
+      commentsList.insertAdjacentHTML("afterbegin", newCommentHTML);
 
-          // Increment the comment counter and update the display
-          commentCounter++;
-          commentsCountDiv.textContent = `${commentCounter} Comments`;
-          // Clear the input field
-          commentInput.value = '';
+      // Increment the comment counter and update the display
+      commentCounter++;
+      commentsCountDiv.textContent = `${commentCounter} Comments`;
+      // Clear the input field
+      commentInput.value = "";
 
-          console.log('New comment added:', commentValue);
-        }
-      });
+      // console.log("New comment added:", commentValue);
+    }
+  });
 
-      // add keydown event listener to the comment list
-      commentInput.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-          saveButton.click();
-        }
-      });
-      
+  // add keydown event listener to the comment list
+  commentInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      saveButton.click();
+    }
+  });
 
   // Save post to local storage
   const post = { profileImage, profileName, postText, postImage };
@@ -153,9 +195,8 @@ export function loadPostsFromLocalStorage() {
 // Call this function on page load
 
 newPostHTML(
-    "images/profile-icon.jpeg",
-    "John Micheal",
-    "This is a new post!",
-    "images/tot-tot.jpg"
+  "images/profile-icon.jpeg",
+  "John",
+  "This is a new post!",
+  "images/tot-tot.jpg"
 );
-
