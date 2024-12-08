@@ -77,3 +77,4 @@ function createPost(profileName, profileImage) {
 
 // Call the function with sample values
 createPost("John", "images/profile-icon.jpeg");
+
