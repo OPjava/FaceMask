@@ -24,6 +24,10 @@
 }
 .comment-text {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 }
 .comment-bar {
   min-width: 100%;
@@ -55,6 +59,7 @@
  align-items: center;
  width: 99%;
  margin-top: 7px;
+ margin-right: 5px;
 }
 .comment-wrap {
   display: flex;
@@ -90,3 +95,7 @@
   border: none;
   color: rgb(226, 229, 233);
  }
+ .comment-btn {
+  visibility: hidden;
+  opacity: 0;
+  }

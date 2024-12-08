@@ -74,7 +74,7 @@ export function newPostHTML(profileImage, profileName, postText, postImage) {
             </div>
             <div class="comment-text">
                   <input id="comment-bar-text" class="comment-bar js-comment-bar" type="text" placeholder="Write a Comment... ">
-                  <button id="saveButton">Save</button>
+                  <button class="comment-btn"id="saveButton">Save</button>
 
             </div>
             </div>
@@ -121,6 +121,14 @@ export function newPostHTML(profileImage, profileName, postText, postImage) {
           console.log('New comment added:', commentValue);
         }
       });
+
+      // add keydown event listener to the comment list
+      commentInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          saveButton.click();
+        }
+      });
+      
 
   // Save post to local storage
   const post = { profileImage, profileName, postText, postImage };
